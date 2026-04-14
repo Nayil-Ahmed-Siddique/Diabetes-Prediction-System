@@ -1,6 +1,23 @@
 # Diabetes Prediction Using Machine Learning
  Data Science Capstone Project To Build a model to accurately predict whether the patients in the dataset have diabetes or not? Using Python and Tableau 10
 
+## Deployment
+
+This model is deployed as a REST API using FastAPI.
+
+### Endpoints
+- `/predict` → returns diabetes prediction
+
+### Tech Stack
+- FastAPI
+- Railway
+
+### Live API
+<your link>
+
+This model was deployed as a REST API using FastAPI and Railway.
+
+(The live service was stopped to avoid resource usage)
 # Problem Statement
 
 
