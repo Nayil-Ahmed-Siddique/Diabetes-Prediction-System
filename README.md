@@ -43,76 +43,182 @@ Age	Age in years
 Outcome	Class variable (either 0 or 1). 268 of 768 values are 1, and the others are 0
 
 
-# Project Task
-### Week 1 : Data Exploration:
+# 🩺 Diabetes Prediction API — ML Deployment System
 
-1. Perform descriptive analysis. Understand the variables and their corresponding values. On the columns below, a value of zero does not make sense and thus indicates missing value:
+A production-style machine learning API built using FastAPI for real-time diabetes prediction.  
+This project demonstrates end-to-end ML workflow including model training, API development, cloud deployment, and CI/CD integration.
 
-• Glucose
+---
 
-• BloodPressure
+## ✨ What this project does
 
-• SkinThickness
+- Predicts diabetes likelihood based on medical input features
+- Exposes model via REST API (FastAPI)
+- Supports real-time prediction via HTTP endpoints
+- Includes automated testing and CI/CD pipeline (GitHub Actions)
+- Deployed on cloud (Railway)
 
+---
 
-• Insulin
+## 🌐 Live API
 
-• BMI
+Base URL:
+https://your-api-url.up.railway.app
 
-2. Visually explore these variables using histograms. Treat the missing values accordingly.
+Swagger Docs:
+https://your-api-url.up.railway.app/docs
 
-![Screenshot (40)](https://user-images.githubusercontent.com/110838853/192419269-c40d445f-69a8-49e2-a98f-70ba8d5bd92c.png)
+---
 
+## 📁 Project Structure
 
+Diabetes-Prediction-System/
+├── main.py                 # FastAPI application
+├── train_model.py         # Model training script
+├── model.pkl              # Trained ML model
+├── requirements.txt       # Dependencies
+├── test_app.py            # API test cases
+├── Procfile               # Deployment config
+└── README.md
 
-3. There are integer and float data type variables in this dataset. Create a count (frequency) plot describing the data types and the count of variables. 
-![Screenshot (48)](https://user-images.githubusercontent.com/110838853/192419145-78730245-264d-49fb-bce6-987c05410698.png)
+---
 
+## ⚙️ Tech Stack
 
-###  Week 2 : Data Exploration:
+- Python
+- Scikit-learn
+- FastAPI
+- Uvicorn
+- GitHub Actions (CI/CD)
+- Railway (Deployment)
 
-1. Check the balance of the data by plotting the count of outcomes by their value. Describe your findings and plan future course of action.
+---
 
-2. Create scatter charts between the pair of variables to understand the relationships. Describe your findings.
+## 🚀 Running Locally
 
-3. Perform correlation analysis. Visually explore it using a heat map.
+### 1. Create virtual environment
 
+python -m venv venv
 
+### Activate
 
- 
- ### Week 3 : Data Modeling:
+Windows:
+venv\Scripts\activate
 
-1. Devise strategies for model building. It is important to decide the right validation framework. Express your thought process.
+Mac/Linux:
+source venv/bin/activate
 
-2. Apply an appropriate classification algorithm to build a model. Compare various models with the results from KNN algorithm.
+---
 
- 
+### 2. Install dependencies
 
-###  Week 4 : Data Modeling:
+pip install -r requirements.txt
 
-1. Create a classification report by analyzing sensitivity, specificity, AUC (ROC curve), etc. Please be descriptive to explain what values of these parameter you have used.
+---
 
-### Week 5 : Data Reporting:
+### 3. Run API
 
-2. Create a dashboard in tableau by choosing appropriate chart types and metrics useful for the business. The dashboard must entail the following:
+uvicorn main:app --reload
 
-a. Pie chart to describe the diabetic or non-diabetic population
-![Screenshot (41)](https://user-images.githubusercontent.com/110838853/192419433-19dc3614-bd57-4fdd-877d-c8cf801265a9.png)
+---
 
-b. Scatter charts between relevant variables to analyze the relationships
+### 4. Open in browser
 
-c. Histogram or frequency charts to analyze the distribution of the data
+http://127.0.0.1:8000/docs
 
-d. Heatmap of correlation analysis among the relevant variables
+---
 
-![Screenshot (42)](https://user-images.githubusercontent.com/110838853/192419316-73c8cbc9-5d86-4be0-8cbe-b8430a1538b3.png)
+## 📡 API Usage
 
+### Endpoint
 
+POST /predict
 
-e. Create bins of these age values: 20-25, 25-30, 30-35, etc. Analyze different variables for these age brackets using a bubble chart.
+### Sample Request
 
+```json
+{
+  "Pregnancies": 6,
+  "Glucose": 148,
+  "BloodPressure": 72,
+  "SkinThickness": 35,
+  "Insulin": 125,
+  "BMI": 33.6,
+  "DiabetesPedigreeFunction": 0.627,
+  "Age": 50
+}
+```
 
+### Sample Response
 
-![Screenshot (43)](https://user-images.githubusercontent.com/110838853/192419382-d4f17f48-b84f-4d78-a547-fcdd7652576d.png)
+```json
+{
+  "prediction": 1
+}
+```
 
+---
 
+## 🧪 Testing
+
+Run tests locally:
+
+pytest
+
+CI pipeline automatically:
+- installs dependencies
+- runs tests
+- validates API functionality
+
+---
+
+## 🔄 CI/CD Pipeline
+
+Implemented using GitHub Actions:
+
+- Triggered on push to main branch
+- Runs automated tests
+- Validates API endpoints
+- Includes deployment stage (extendable)
+
+---
+
+## ☁️ Deployment
+
+Deployed on Railway for live API access.
+
+Supports:
+- auto-redeploy on code updates
+- public endpoint exposure
+
+---
+
+## 🧠 Key Learnings
+
+- Building end-to-end ML systems
+- Converting models into APIs
+- Real-time inference serving
+- CI/CD integration for ML workflows
+- Cloud deployment of ML services
+
+---
+
+## 📌 Future Improvements
+
+- Model versioning
+- Input validation enhancements
+- Docker containerization
+- Monitoring & logging
+- Scalable deployment (AWS/GCP)
+
+---
+
+## 📜 License
+
+For educational and demonstration purposes.
+
+---
+
+## 🧑‍💻 Author
+
+Built to demonstrate practical ML deployment and system design skills.
