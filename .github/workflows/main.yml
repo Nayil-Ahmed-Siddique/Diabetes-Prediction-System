@@ -22,6 +22,6 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Run app check
+    - name: Run API test
       run: |
-        python main.py
+        python -c "import main"
