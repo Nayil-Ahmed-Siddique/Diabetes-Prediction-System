@@ -25,3 +25,5 @@ jobs:
     - name: Run API test
       run: |
         pytest
+    - name: Deploy (Simulation)
+      run: echo "App deployed successfully"
