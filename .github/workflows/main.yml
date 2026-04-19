@@ -24,4 +24,4 @@ jobs:
 
     - name: Run API test
       run: |
-        python -c "import main"
+        pytest
