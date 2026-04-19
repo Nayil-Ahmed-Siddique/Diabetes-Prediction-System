@@ -16,7 +16,6 @@ This model is deployed as a REST API using FastAPI.
 <your link>
 
 This model was deployed as a REST API using FastAPI and Railway.
-
 (The live service was stopped to avoid resource usage)
 # Problem Statement
 
@@ -68,6 +67,8 @@ https://your-api-url.up.railway.app
 Swagger Docs:
 https://your-api-url.up.railway.app/docs
 
+The API was deployed using Railway and tested successfully.
+(Current deployment is stopped to avoid resource usage. It can be redeployed anytime.)
 ---
 
 ## 📁 Project Structure
